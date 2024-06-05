@@ -41,18 +41,22 @@
 
         <section id="videos">
             <h2>Vídeos Educativos</h2>
-            <div id="video1">Instalação do R e RStudio</div>
+            <div id="video1">Módulo I - Instalação e configuração</div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/J4k-UQNFEBI" frameborder="0" allowfullscreen></iframe>
-            <div id="video2">Vídeo 2 (em breve)</div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/J4k-UQNFEBI" frameborder="0" allowfullscreen></iframe>
-            <div id="video3">Vídeo 3 (em breve)</div>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/J4k-UQNFEBI" frameborder="0" allowfullscreen></iframe>
+            <div id="video2">Módulo II - Sintaxe, exemplos e documentação</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bWs4McLtX7Y" frameborder="0" allowfullscreen></iframe>
+            <div id="video3">Módulo III - (Em breve)</div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/bWs4McLtX7Y" frameborder="0" allowfullscreen></iframe>
         </section>
+        
     </main>
 
     <footer>
         <p>&copy; 2024 Curso de linguagem R - Bruno 3C</p>
     </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <button id="back-to-top" title="Voltar ao topo">&uarr;</button>
 
     <script src="script.js"></script>
     <script>
@@ -60,6 +64,24 @@
             // Animação de carregamento do site
             document.body.classList.add('loaded');
             console.log("Site de R carregado com sucesso!");
+
+            // Botão Voltar ao Topo
+            const backToTopButton = document.getElementById('back-to-top');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
